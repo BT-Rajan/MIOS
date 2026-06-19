@@ -95,7 +95,7 @@ async def approve_requisition(
 
 @router.post("/requisitions/{requisition_id}/reject")
 async def reject_requisition(
-    requisition_id: int = Path(...),
+    requisition_id: int,
     data: PurchaseRequisitionReject,
     service: ProcurementService = Depends(get_service)
 ):
