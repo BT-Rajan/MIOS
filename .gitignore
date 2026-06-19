@@ -20,26 +20,42 @@ wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+
+# Virtual environments
 venv/
 env/
 ENV/
 .venv/
 .env/
-.ENV/
-pip-log.txt
-pip-delete-this-directory.txt
-.tox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*.cover
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*.tmp
+
+# Environment variables
+.env
+.env.local
+*.env.*
+
+# Logs
 *.log
-.git/modules/
-*.sublime-workspace
-.pytest_cache/
-.hypothesis/
-.coverage*
+
+# Coverage
+.coverage
+coverage/
 htmlcov/
+
+# MyPy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# PyTest
+.pytest_cache/
+
+# Build outputs
+target/
 ```

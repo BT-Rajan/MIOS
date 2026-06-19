@@ -12,7 +12,7 @@ from enum import Enum
 from sqlalchemy import Column, Integer, String, DateTime, JSON, ForeignKey, Text, Boolean
 from sqlalchemy.orm import relationship, Session, declarative_base
 
-from core.constants import NotificationType
+from backend.core.constants import NotificationType
 
 
 Base = declarative_base()

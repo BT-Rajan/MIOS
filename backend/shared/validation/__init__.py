@@ -8,7 +8,7 @@ No duplicated validations allowed.
 from typing import Optional, Any
 from decimal import Decimal
 
-from core.exceptions import ValidationError
+from backend.core.exceptions import ValidationError
 
 
 class ValidationEngine:

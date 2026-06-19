@@ -11,8 +11,8 @@ from datetime import datetime, timezone
 from sqlalchemy import Column, Integer, String, DateTime, ForeignKey, Boolean, Table
 from sqlalchemy.orm import relationship, Session, declarative_base
 
-from core.exceptions import WorkflowError
-from core.constants import WorkflowStatus
+from backend.core.exceptions import WorkflowError
+from backend.core.constants import WorkflowStatus
 
 
 Base = declarative_base()

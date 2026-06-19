@@ -9,7 +9,7 @@ from typing import Callable, Any, Optional
 from datetime import datetime, timezone
 from dataclasses import dataclass, field
 
-from core.constants import EventType
+from backend.core.constants import EventType
 
 
 @dataclass
