@@ -1,14 +1,9 @@
-```
 # Dependencies
 node_modules/
 
 # Build outputs
 dist/
 build/
-*.js
-*.ts
-*.tsx
-*.css
 
 # Environment variables
 .env
@@ -50,11 +45,6 @@ htmlcov/
 *.local
 config.local.*
 
-# TypeScript/JavaScript build artifacts
-*.js.map
-*.tsbuildinfo
-
 # Vite specific
 !.vite/
 vite/dist/
-```
