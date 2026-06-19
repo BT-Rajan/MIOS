@@ -1,61 +1,60 @@
 ```
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-.Python
-build/
-develop-eggs/
+# Dependencies
+node_modules/
+
+# Build outputs
 dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-
-# Virtual environments
-venv/
-env/
-ENV/
-.venv/
-.env/
-
-# IDE
-.vscode/
-.idea/
-*.swp
-*.swo
-*.tmp
+build/
+*.js
+*.ts
+*.tsx
+*.css
 
 # Environment variables
 .env
 .env.local
-*.env.*
+.env.*
+
+# IDE specific
+.vscode/
+.idea/
+
+# Python related (if any Python in project)
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
 
 # Logs
 *.log
 
-# Coverage
-.coverage
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+
+# Coverage reports
 coverage/
 htmlcov/
+.coverage
 
-# MyPy
-.mypy_cache/
-.dmypy.json
-dmypy.json
+# Local configuration
+*.local
+config.local.*
 
-# PyTest
-.pytest_cache/
+# TypeScript/JavaScript build artifacts
+*.js.map
+*.tsbuildinfo
 
-# Build outputs
-target/
+# Vite specific
+!.vite/
+vite/dist/
 ```
