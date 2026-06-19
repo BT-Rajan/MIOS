@@ -10,8 +10,8 @@ from datetime import datetime, timezone
 from sqlalchemy import Column, Integer, String, DateTime, ForeignKey, Table, Boolean
 from sqlalchemy.orm import relationship, Session, declarative_base
 
-from core.exceptions import ForbiddenError
-from core.constants import PermissionType
+from backend.core.exceptions import ForbiddenError
+from backend.core.constants import PermissionType
 
 
 Base = declarative_base()

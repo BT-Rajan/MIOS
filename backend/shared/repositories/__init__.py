@@ -11,7 +11,7 @@ from datetime import datetime, timezone
 from sqlalchemy.orm import Session, Query
 from sqlalchemy import Column, Integer, DateTime, Boolean
 
-from core.exceptions import NotFoundError
+from backend.core.exceptions import NotFoundError
 
 
 T = TypeVar("T")

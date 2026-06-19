@@ -11,7 +11,7 @@ from uuid import uuid4
 from sqlalchemy import Column, Integer, String, DateTime, JSON, ForeignKey, Text
 from sqlalchemy.orm import relationship, Session, declarative_base
 
-from core.exceptions import AuditError
+from backend.core.exceptions import AuditError
 
 
 Base = declarative_base()
