@@ -47,7 +47,7 @@ def login(username: str, password: str, db: Session = Depends(get_db)):
     return {"access_token": access_token, "token_type": "bearer"}
 
 
-def get_current_user_dependency(token: str, db: Session = Depends(get_db)) -> UserResponse:
+def get_current_user_dependency(db: Session = Depends(get_db), token: str = Depends(oauth2_scheme)) -> UserResponse:
     """Dependency to get current user from token."""
     payload = decode_access_token(token)
     if payload is None:
