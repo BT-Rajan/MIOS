@@ -13,7 +13,7 @@ from backend.core.database import get_db
 router = APIRouter(prefix="/products", tags=["Products"])
 
 
-def get_service(session: AsyncSession = Depends(get_db)) -> ProductService:
+def get_service(session: Async: Session) -> ProductService:
     """Get product service instance."""
     return ProductService(session)
 

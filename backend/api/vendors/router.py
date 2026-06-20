@@ -8,15 +8,15 @@ from typing import List
 from fastapi import APIRouter, Depends, HTTPException, Query
 from sqlalchemy.orm import Session
 
-from core.database import get_db
-from api.vendors.schemas import VendorCreate, VendorUpdate, VendorResponse
-from api.vendors.service import VendorService
+from backend.core.database import get_db
+from backend.api.vendors.schemas import VendorCreate, VendorUpdate, VendorResponse
+from backend.api.vendors.service import VendorService
 
 
 router = APIRouter(prefix="/vendors", tags=["vendors"])
 
 
-def get_service(db: Session = Depends(get_db)) -> VendorService:
+def get_service(db: : Session) -> VendorService:
     """Get vendor service instance."""
     return VendorService(db)
 

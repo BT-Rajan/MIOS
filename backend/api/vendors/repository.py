@@ -8,8 +8,8 @@ from typing import Optional, List
 
 from sqlalchemy.orm import Session
 
-from shared.repositories import BaseRepository
-from api.vendors.models import Vendor
+from backend.shared.repositories import BaseRepository
+from backend.api.vendors.models import Vendor
 
 
 class VendorRepository(BaseRepository[Vendor]):

@@ -6,8 +6,8 @@ from jose import JWTError, jwt
 from passlib.context import CryptContext
 from sqlalchemy.orm import Session
 
-from core.config import get_settings
-from api.users.models import User
+from backend.core.config import get_settings
+from backend.api.users.models import User
 
 settings = get_settings()
 

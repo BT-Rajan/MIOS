@@ -4,8 +4,8 @@ Customer module validators.
 Additional customer-specific validation rules.
 """
 
-from core.exceptions import ValidationError
-from shared.validation import ValidationEngine
+from backend.core.exceptions import ValidationError
+from backend.shared.validation import ValidationEngine
 
 
 class CustomerValidators:

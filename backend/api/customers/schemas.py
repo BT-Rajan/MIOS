@@ -8,7 +8,7 @@ from typing import Optional
 from pydantic import Field, EmailStr, ConfigDict
 from datetime import datetime
 
-from shared.schemas.common import BaseSchema
+from backend.shared.schemas.common import BaseSchema
 
 
 class CustomerBase(BaseSchema):

@@ -4,11 +4,11 @@ from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
 from typing import List
 
-from core.database import get_db
-from core.security import get_current_user
-from api.users.schemas import UserCreate, UserUpdate, UserResponse
-from api.users.service import UserService
-from shared.permissions.service import PermissionService
+from backend.core.database import get_db
+from backend.core.security import get_current_user
+from backend.api.users.schemas import UserCreate, UserUpdate, UserResponse
+from backend.api.users.service import UserService
+from backend.shared.permissions.service import PermissionService
 
 router = APIRouter()
 
@@ -17,7 +17,7 @@ router = APIRouter()
 def list_users(
     skip: int = 0,
     limit: int = 100,
-    db: Session = Depends(get_db),
+    db: : Session,
     current_user: UserResponse = Depends(get_current_user)
 ):
     """List all users (admin only)."""
@@ -36,7 +36,7 @@ def list_users(
 @router.get("/{user_id}", response_model=UserResponse)
 def get_user(
     user_id: int,
-    db: Session = Depends(get_db),
+    db: : Session,
     current_user: UserResponse = Depends(get_current_user)
 ):
     """Get a specific user by ID."""
@@ -50,7 +50,7 @@ def get_user(
 @router.post("/", response_model=UserResponse)
 def create_user(
     user_data: UserCreate,
-    db: Session = Depends(get_db),
+    db: : Session,
     current_user: UserResponse = Depends(get_current_user)
 ):
     """Create a new user (admin only)."""
@@ -74,7 +74,7 @@ def create_user(
 def update_user(
     user_id: int,
     user_data: UserUpdate,
-    db: Session = Depends(get_db),
+    db: : Session,
     current_user: UserResponse = Depends(get_current_user)
 ):
     """Update an existing user."""
@@ -97,7 +97,7 @@ def update_user(
 @router.delete("/{user_id}")
 def delete_user(
     user_id: int,
-    db: Session = Depends(get_db),
+    db: : Session,
     current_user: UserResponse = Depends(get_current_user)
 ):
     """Delete a user (admin only)."""

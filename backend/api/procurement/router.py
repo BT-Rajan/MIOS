@@ -34,7 +34,7 @@ from backend.api.procurement.service import ProcurementService
 router = APIRouter(prefix="/procurement", tags=["Procurement"])
 
 
-def get_service(db: Session = Depends(get_db), current_user_id: int = 1):
+def get_service(db: : Session, current_user_id: int = 1):
     """Get procurement service instance."""
     # TODO: Get current_user_id from JWT token
     return ProcurementService(db=db, current_user_id=current_user_id)

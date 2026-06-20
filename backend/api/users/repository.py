@@ -4,8 +4,8 @@ from sqlalchemy.orm import Session
 from sqlalchemy import select
 from typing import Optional, List
 
-from api.users.models import User
-from api.users.schemas import UserCreate, UserUpdate
+from backend.api.users.models import User
+from backend.api.users.schemas import UserCreate, UserUpdate
 
 
 class UserRepository:

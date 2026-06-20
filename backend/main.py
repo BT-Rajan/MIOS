@@ -8,8 +8,8 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from contextlib import asynccontextmanager
 
-from core.config import get_settings
-from core.database import init_db
+from backend.core.config import get_settings
+from backend.core.database import init_db
 
 
 settings = get_settings()
@@ -48,19 +48,19 @@ def create_app() -> FastAPI:
         return {"status": "healthy", "version": settings.app_version}
     
     # Register API routers
-    from api.auth.router import router as auth_router
-    from api.users.router import router as users_router
-    from api.customers.router import router as customers_router
-    from api.vendors.router import router as vendors_router
-    from api.products.router import router as products_router
-    from api.inventory.router import router as inventory_router
-    from api.orders.router import router as orders_router
-    from api.procurement.router import router as procurement_router
-    from api.production.router import router as production_router
-    from api.workers.router import router as workers_router
-    from api.finance.router import router as finance_router
-    from api.reports.router import router as reports_router
-    from api.conversation.router import router as conversation_router
+    from backend.api.auth.router import router as auth_router
+    from backend.api.users.router import router as users_router
+    from backend.api.customers.router import router as customers_router
+    from backend.api.vendors.router import router as vendors_router
+    from backend.api.products.router import router as products_router
+    from backend.api.inventory.router import router as inventory_router
+    from backend.api.orders.router import router as orders_router
+    from backend.api.procurement.router import router as procurement_router
+    from backend.api.production.router import router as production_router
+    from backend.api.workers.router import router as workers_router
+    from backend.api.finance.router import router as finance_router
+    from backend.api.reports.router import router as reports_router
+    from backend.api.conversation.router import router as conversation_router
 
     app.include_router(auth_router, prefix="/api/auth", tags=["Authentication"])
     app.include_router(users_router, prefix="/api/users", tags=["Users"])

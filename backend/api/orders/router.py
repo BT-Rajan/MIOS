@@ -49,7 +49,7 @@ router = APIRouter(prefix="/orders", tags=["orders"])
 # =============================================================================
 
 
-def get_order_service(db: Session = Depends(get_db)):
+def get_order_service(db: : Session):
     """Get order service with all dependencies."""
     return OrderService(
         db=db,
@@ -60,7 +60,7 @@ def get_order_service(db: Session = Depends(get_db)):
     )
 
 
-def get_order_workflow_service(db: Session = Depends(get_db)):
+def get_order_workflow_service(db: : Session):
     """Get order workflow service with all dependencies."""
     from backend.api.orders.repository import OrderRepository
     

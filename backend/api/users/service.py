@@ -3,11 +3,11 @@
 from sqlalchemy.orm import Session
 from typing import List, Optional
 
-from api.users.models import User
-from api.users.repository import UserRepository
-from api.users.schemas import UserCreate, UserUpdate
-from core.security import get_password_hash
-from shared.audit.service import AuditService
+from backend.api.users.models import User
+from backend.api.users.repository import UserRepository
+from backend.api.users.schemas import UserCreate, UserUpdate
+from backend.core.security import get_password_hash
+from backend.shared.audit.service import AuditService
 
 
 class UserService:

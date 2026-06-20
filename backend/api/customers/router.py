@@ -8,15 +8,15 @@ from typing import List
 from fastapi import APIRouter, Depends, HTTPException, Query
 from sqlalchemy.orm import Session
 
-from core.database import get_db
-from api.customers.schemas import CustomerCreate, CustomerUpdate, CustomerResponse
-from api.customers.service import CustomerService
+from backend.core.database import get_db
+from backend.api.customers.schemas import CustomerCreate, CustomerUpdate, CustomerResponse
+from backend.api.customers.service import CustomerService
 
 
 router = APIRouter(prefix="/customers", tags=["customers"])
 
 
-def get_service(db: Session = Depends(get_db)) -> CustomerService:
+def get_service(db: : Session) -> CustomerService:
     """Get customer service instance."""
     return CustomerService(db)
 

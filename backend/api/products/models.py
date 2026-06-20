@@ -10,7 +10,7 @@ from typing import Optional
 from sqlalchemy import Column, Integer, String, Text, DateTime, Boolean, Numeric, ForeignKey
 from sqlalchemy.orm import relationship
 
-from shared.models.base import Base, TimestampMixin, SoftDeleteMixin
+from backend.shared.models.base import Base, TimestampMixin, SoftDeleteMixin
 
 
 class Product(Base, TimestampMixin, SoftDeleteMixin):

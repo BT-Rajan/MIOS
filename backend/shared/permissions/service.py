@@ -3,7 +3,7 @@
 from sqlalchemy.orm import Session
 from typing import List, Optional
 
-from shared.permissions import PermissionEngine, User, Role, Permission
+from backend.shared.permissions import PermissionEngine, User, Role, Permission
 
 
 class PermissionService:

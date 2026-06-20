@@ -4,17 +4,17 @@ from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
 from datetime import timedelta
 
-from core.database import get_db
-from core.security import authenticate_user, create_access_token, get_current_user
-from api.users.schemas import UserCreate, UserResponse, Token
-from api.users.service import UserService
-from shared.permissions.service import PermissionService
+from backend.core.database import get_db
+from backend.core.security import authenticate_user, create_access_token, get_current_user
+from backend.api.users.schemas import UserCreate, UserResponse, Token
+from backend.api.users.service import UserService
+from backend.shared.permissions.service import PermissionService
 
 router = APIRouter()
 
 
 @router.post("/register", response_model=UserResponse)
-def register(user_data: UserCreate, db: Session = Depends(get_db)):
+def register(user_data: UserCreate, db: Session):
     """Register a new user."""
     user_service = UserService(db)
     
@@ -27,7 +27,7 @@ def register(user_data: UserCreate, db: Session = Depends(get_db)):
 
 
 @router.post("/login", response_model=Token)
-def login(username: str, password: str, db: Session = Depends(get_db)):
+def login(username: str, password: str, db: Session):
     """Login and get access token."""
     user = authenticate_user(db, username, password)
     if not user:

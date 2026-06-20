@@ -3,7 +3,7 @@
 from sqlalchemy.orm import Session
 from typing import Optional, Any
 
-from shared.audit import AuditEngine, EventLedger
+from backend.shared.audit import AuditEngine, EventLedger
 
 
 class AuditService:
