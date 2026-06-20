@@ -14,7 +14,7 @@ router = APIRouter()
 
 
 @router.post("/register", response_model=UserResponse)
-def register(user_data: UserCreate, db: Session):
+def register(user_data: UserCreate, db: Session = Depends(get_db)):
     """Register a new user."""
     user_service = UserService(db)
     
@@ -27,7 +27,7 @@ def register(user_data: UserCreate, db: Session):
 
 
 @router.post("/login", response_model=Token)
-def login(username: str, password: str, db: Session):
+def login(username: str, password: str, db: Session = Depends(get_db)):
     """Login and get access token."""
     user = authenticate_user(db, username, password)
     if not user:
