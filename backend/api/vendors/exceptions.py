@@ -4,7 +4,7 @@ Vendor module exceptions.
 Vendor-specific error types.
 """
 
-from core.exceptions import MIOSException
+from backend.core.exceptions import MIOSException
 
 
 class VendorError(MIOSException):

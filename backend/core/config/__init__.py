@@ -3,18 +3,25 @@ Manufacturing Intelligence Operating System (MIOS)
 Core Configuration Module
 """
 
-from pydantic_settings import BaseSettings
+from pydantic_settings import BaseSettings, SettingsConfigDict
 from functools import lru_cache
-from typing import Optional
+from typing import Optional, List
 
 
 class Settings(BaseSettings):
     """Application configuration settings."""
     
+    model_config = SettingsConfigDict(
+        env_file=".env",
+        case_sensitive=False,
+        extra="ignore"  # Ignore extra env vars not defined here
+    )
+    
     # Application
     app_name: str = "MIOS"
     app_version: str = "1.0.0"
     debug: bool = False
+    environment: str = "development"
     
     # Database
     database_url: str = "mysql+aiomysql://root:password@localhost:3306/mios"
@@ -25,20 +32,19 @@ class Settings(BaseSettings):
     redis_url: str = "redis://localhost:6379/0"
     
     # JWT
-    jwt_secret_key: str = "your-secret-key-change-in-production"
+    jwt_secret_key: str = "your-secret-key-change-in-production-min-32-chars"
     jwt_algorithm: str = "HS256"
     jwt_expiration_minutes: int = 30
     
     # Security
     encryption_key: Optional[str] = None
     
+    # CORS
+    allowed_origins: List[str] = ["http://localhost:3000", "http://localhost:80"]
+    
     # Rate limiting
     rate_limit_requests: int = 100
     rate_limit_window: int = 60
-    
-    class Config:
-        env_file = ".env"
-        case_sensitive = False
 
 
 @lru_cache()

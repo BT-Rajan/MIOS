@@ -8,9 +8,9 @@ import pytest
 from datetime import datetime, timezone
 from unittest.mock import Mock, MagicMock
 
-from shared.validation import ValidationEngine
-from shared.events import EventBus, Event
-from core.exceptions import ValidationError, WorkflowError
+from backend.shared.validation import ValidationEngine
+from backend.shared.events import EventBus, Event
+from backend.core.exceptions import ValidationError, WorkflowError
 
 
 class TestValidationEngine:

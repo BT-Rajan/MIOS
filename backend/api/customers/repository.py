@@ -8,8 +8,8 @@ from typing import Optional, List
 
 from sqlalchemy.orm import Session, Query
 
-from shared.repositories import BaseRepository
-from api.customers.models import Customer
+from backend.shared.repositories import BaseRepository
+from backend.api.customers.models import Customer
 
 
 class CustomerRepository(BaseRepository[Customer]):

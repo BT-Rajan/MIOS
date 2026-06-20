@@ -7,7 +7,7 @@ Centralized database connection handling.
 from typing import Generator
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, Session
-from core.config import get_settings
+from backend.core.config import get_settings
 
 
 settings = get_settings()

@@ -4,7 +4,7 @@ Customer module exceptions.
 Customer-specific error types.
 """
 
-from core.exceptions import MIOSException
+from backend.core.exceptions import MIOSException
 
 
 class CustomerError(MIOSException):

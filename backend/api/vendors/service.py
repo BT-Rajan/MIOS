@@ -8,12 +8,12 @@ Uses shared engines for audit, validation, and workflow.
 from typing import Optional, List
 from sqlalchemy.orm import Session
 
-from core.exceptions import ValidationError, NotFoundError, ConflictError
-from shared.audit import AuditEngine
-from shared.validation import ValidationEngine
-from api.vendors.models import Vendor
-from api.vendors.repository import VendorRepository
-from api.vendors.schemas import VendorCreate, VendorUpdate
+from backend.core.exceptions import ValidationError, NotFoundError, ConflictError
+from backend.shared.audit import AuditEngine
+from backend.shared.validation import ValidationEngine
+from backend.api.vendors.models import Vendor
+from backend.api.vendors.repository import VendorRepository
+from backend.api.vendors.schemas import VendorCreate, VendorUpdate
 
 
 class VendorService:

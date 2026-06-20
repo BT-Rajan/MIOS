@@ -8,7 +8,7 @@ from typing import Optional, List
 from pydantic import Field, ConfigDict
 from datetime import datetime
 
-from shared.schemas.common import BaseSchema
+from backend.shared.schemas.common import BaseSchema
 
 
 class ProductBase(BaseSchema):
